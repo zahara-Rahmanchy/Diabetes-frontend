@@ -163,8 +163,8 @@ const PredictionForm = () => {
         {/* Form started */}
         {/* Form started */}
         {/* form div start */}
-        <div className="bg-base-100">
-          <div className="card mt-8 mx-auto flex-shrink-0 md:max-w-screen-lg   shadow-lg bg-stone-100 mb-20 py-5  w-8/12  ">
+        <div className="bg-base-100 w-full">
+          <div className="card mt-8 mx-auto flex-shrink-0  md:max-w-screen-lg    shadow-lg bg-stone-100 mb-20 py-5  w-8/12  ">
             <Tabs
               defaultIndex={TabIndex}
               onSelect={index => setTabIndex(index)}
@@ -261,7 +261,7 @@ const PredictionForm = () => {
                   </label>
 
                   {/* Calculating div here */}
-                  <div className="flex flex-col-4 gap-2 mb-4 ">
+                  <div className="flex md:flex-row flex-col gap-2 mb-4 ">
                     <div className=" form-control ">
                       {/* weight */}
                       <input
@@ -270,7 +270,7 @@ const PredictionForm = () => {
                         {...register("weight", {required: true})}
                         placeholder="weight(kg)"
                         name="weight"
-                        className="mt-3 h-8 mx-7 w-32 text-black input input-bordered border border-cyan-600"
+                        className="placeholder:ps-2 mt-3 h-8 mx-7 w-32 text-black input input-bordered border border-cyan-600"
                       />
                       {errors.weight && (
                         <div className="text-red-600 ">
@@ -287,7 +287,7 @@ const PredictionForm = () => {
                         {...register("heightFeet", {required: true})}
                         placeholder="height(Feet)"
                         name="heightFeet"
-                        className="mt-3 h-8 w-36 text-black input input-bordered border border-cyan-600"
+                        className="placeholder:ps-2 mt-3 h-8 w-36 text-black input input-bordered border border-cyan-600"
                       />
                       {errors.heightFeet && (
                         <div className="text-red-600 ">
@@ -305,7 +305,7 @@ const PredictionForm = () => {
                         {...register("heightInches", {required: true})}
                         placeholder="height(Inches)"
                         name="heightInches"
-                        className="  h-8 mt-3 w-40  text-black input input-bordered border border-cyan-600"
+                        className=" placeholder:ps-2 h-8 mt-3 w-40  text-black input input-bordered border border-cyan-600"
                       />
                       {errors.heightInches && (
                         <div className="text-red-600 ">
