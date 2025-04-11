@@ -1,9 +1,8 @@
 import {Controller, useForm} from "react-hook-form";
 
 // import convertFormData from "./convertFormData";
-import {useContext, useState} from "react";
+
 import Swal from "sweetalert2";
-import {Player} from "@lottiefiles/react-lottie-player";
 
 // import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 
@@ -18,6 +17,7 @@ import Response from "./Response";
 import {convertSecondForm} from "./Utilities/convertSecondForm";
 import convertFormData from "./Utilities/convertFormData";
 import LoadingModal from "./Utilities/LoadingModal";
+import { useState } from "react";
 // import {AuthContext} from "../../Providers/AuthProvider";
 
 // http://localhost:5000/
@@ -88,7 +88,64 @@ const PredictionForm = () => {
       // reset();
     }
   };
-
+  // const onSubmit = async (data) => {
+  //   console.log(data);
+  //   const val = convertFormData(data, bmiResult);
+  //   console.log(Object.keys(val), Object.values(val));
+  //   // let Gender = data.Sex === 1 ? "Male" : "Female";
+  //   const secondform = convertSecondForm(data);
+  
+  //   const inputdata = {
+  //     firstform: val,
+  //     secondform: secondform,
+  //   };
+  //   console.log(JSON.stringify(inputdata));
+  
+  //   try {
+  //     setIsLoading(true);
+      
+  //     // Make the first API call (health indicators API)
+  //     const apiUrl1 = "https://diabetesprediction-health-indicators.onrender.com/gbsylpredict";
+  //     const response1 = await axios.post(apiUrl1, inputdata.firstform);
+  //     const p1 = response1.data.prediction;
+  //     console.log("Response1:", p1);
+  
+  //     // Make the second API call (sylhet diabetes dataset API)
+  //     const apiUrl2 = "https://sylhetdiabetes.onrender.com/gradientBsylhet";
+  //     const response2 = await axios.post(apiUrl2, inputdata.secondform);
+  //     const p2 = response2.data.prediction;
+  //     console.log("Response2:", p2);
+  
+  //     // Evaluate the results and decide risk level
+  //     let risk = 0; // Default to no risk
+  //     if (p1 === 0 || p1 === null) {
+  //       if (p2 === "Positive") {
+  //         risk = 1; // Medium risk
+  //       }
+  //     } else if (p1 === 1) {
+  //       if (p2 === "Positive") {
+  //         risk = 2; // High risk
+  //       } else if (p2 === "Negative" || p2 === null) {
+  //         risk = 1; // Medium risk
+  //       }
+  //     }
+  
+  //     setRes(risk);
+  //     if (response1.status === 200 && response2.status === 200) {
+  //       Swal.fire("Your Prediction is here!");
+  //     }
+  //     console.log("Final Risk:", risk);
+  
+  //     setIsLoading(false);
+  //   } catch (error) {
+  //     // Handle any errors that occur during the fetch
+  //     alert(error.message);
+  //     console.error("Error sending data to the backend:", error);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+  
   const weightValue = watch("weight");
   const heightFeetValue = watch("heightFeet");
   const heightInchesValue = watch("heightInches");
